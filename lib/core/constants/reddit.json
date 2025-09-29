@@ -1,0 +1,47 @@
+
+  {
+    "url": "https://www.reddit.com/r/MadeMeSmile/comments/1nqx9jc/thats_all_he_needed_to_hear/?utm_source=share&utm_medium=web3x&utm_name=web3xcss&utm_term=1&utm_content=share_button",
+    "source": "reddit",
+    "title": "That's all he needed to hear",
+    "author": "darth_vader39",
+    "duration": 18,
+    "thumbnail": "https://external-preview.redd.it/thats-all-he-needed-to-hear-v0-ZmlhbDFhbzhmaHJmMaSKSL56coXWp3-zPuzwitxQTX9pHYUcewIJWPCCd13P.png?width=640&crop=smart&format=pjpg&auto=webp&s=ffc8a169f60e65503d245c46a7e85c117142952e",
+    "medias": [
+      {
+        "url": "https://packaged-media.redd.it/lu0rsen8fhrf1/pb/m2-res_392p.mp4?m=DASHPlaylist.mpd&v=1&e=1758924000&s=b32107672046dfc04600b07db78693b524afdeb6",
+        "quality": "392p",
+        "resolution": "220x392",
+        "extension": "mp4",
+        "type": "video",
+        "width": 220,
+        "height": 392
+      },
+      {
+        "url": "https://packaged-media.redd.it/lu0rsen8fhrf1/pb/m2-res_480p.mp4?m=DASHPlaylist.mpd&v=1&e=1758924000&s=ee602963a317327a60a77acd644b028088ed50d6",
+        "quality": "480p",
+        "resolution": "270x480",
+        "extension": "mp4",
+        "type": "video",
+        "width": 270,
+        "height": 480
+      },
+      {
+        "url": "https://packaged-media.redd.it/lu0rsen8fhrf1/pb/m2-res_640p.mp4?m=DASHPlaylist.mpd&v=1&e=1758924000&s=8a2faeffea7b0ac5f5804786680a8cabfee16b75",
+        "quality": "640p",
+        "resolution": "360x640",
+        "extension": "mp4",
+        "type": "video",
+        "width": 360,
+        "height": 640
+      },
+      {
+        "url": "https://v.redd.it/lu0rsen8fhrf1/HLSPlaylist.m3u8?f=sd%2CsubsAll%2ChlsSpecOrder&v=1&a=1761501992%2CMmVhNjVhYWUxN2Y1OGJkZjBkMDQwM2E5NDg3Y2VlMDFlNzkzMzcyMzlhYjVjNDhmZjBhZGY0ZWU5MjY3MDYzNw%3D%3D",
+        "quality": "auto",
+        "extension": "m3u8",
+        "type": "video"
+      }
+    ],
+    "type": "multiple",
+    "error": false,
+    "time_end": 1023
+  }

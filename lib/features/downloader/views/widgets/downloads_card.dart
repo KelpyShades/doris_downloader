@@ -40,12 +40,14 @@ class DownloadsCard extends ConsumerWidget {
                 //     borderRadius: BorderRadius.circular(25),
                 //     child: Image.memory(thumbnail, fit: BoxFit.cover),
                 // )
-                ? Center(child: Icon(Icons.video_camera_back_rounded))
+                ? Center(
+                    child: Icon(Icons.video_camera_back_rounded, size: 100),
+                  )
                 // : ClipRRect(
                 //     borderRadius: BorderRadius.circular(25),
                 //     child: Image.file(file, fit: BoxFit.cover),
                 //   ),
-                : Center(child: Icon(Icons.image_rounded)),
+                : Center(child: Icon(Icons.image_rounded, size: 100)),
           ),
           Positioned(
             bottom: 10,

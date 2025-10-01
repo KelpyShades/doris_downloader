@@ -1,12 +1,10 @@
 import 'dart:developer';
-
 import 'package:doris_downloader/core/constants/assets.dart';
 import 'package:doris_downloader/core/error_handling/contexts/error_handler.dart';
 import 'package:doris_downloader/core/utils/validation.dart';
 import 'package:doris_downloader/features/downloader/logic/provider.dart';
-import 'package:doris_downloader/features/downloader/views/widgets/bottom_nav.dart';
-import 'package:doris_downloader/features/downloader/views/widgets/downloads.dart';
 import 'package:doris_downloader/features/downloader/views/widgets/home.dart';
+import 'package:doris_downloader/features/downloader/views/widgets/dialog.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter/material.dart';
@@ -38,7 +36,8 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
       String? error = validateUrl(url);
       log('validateUrl error: $error');
       if (error != null) return;
-      if (!ref.read(downloaderNotifierProvider).isLoading) {
+      if (!ref.read(downloaderNotifierProvider).isLoading && mounted) {
+        showOverlay(context);
         WidgetsBinding.instance.addPostFrameCallback((_) async {
           await asyncErrorWrapper(
             () async {
@@ -63,8 +62,6 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    final index = ref.watch(indexProvider);
-    ref.read(thumbnailsProvider);
     return Scaffold(
       appBar: AppBar(
         leading: Padding(
@@ -76,8 +73,7 @@ class _HomeScreenState extends ConsumerState<HomeScreen> {
         elevation: 0,
         scrolledUnderElevation: 0,
       ),
-      body: index == 0 ? HomeWidget() : DownloadsWidget(),
-      bottomNavigationBar: BottomNavWidget(index: index),
+      body: HomeWidget(),
     );
   }
 }

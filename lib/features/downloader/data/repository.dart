@@ -11,7 +11,6 @@ import 'package:doris_downloader/features/downloader/data/models/reddit/reddit_m
 import 'package:doris_downloader/features/downloader/data/models/tiktok/tiktok_model.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_dotenv/flutter_dotenv.dart';
-import 'package:video_thumbnail/video_thumbnail.dart';
 
 class DownloaderRepository {
   final String apiUrl = 'https://beta.fastsaverapi.com/media/info';
@@ -121,16 +120,6 @@ class DownloaderRepository {
     }
   }
 
-  Future<Uint8List> getVideoThumbnail(String videoPath) async {
-    final uint8list = await VideoThumbnail.thumbnailData(
-      video: videoPath,
-      imageFormat: ImageFormat.JPEG,
-      maxWidth:
-          0, // specify the width of the thumbnail, let the height auto-scaled to keep the source aspect ratio
-      quality: 25,
-    );
-    return uint8list!;
-  }
 
   Map<String, dynamic> getDownloadData(dynamic model) {
     if (model is PinterestModel) {

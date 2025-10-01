@@ -2,7 +2,6 @@ import 'package:doris_downloader/core/config/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-
 class ButtonWidget extends ConsumerWidget {
   final String text;
   final VoidCallback onPressed;

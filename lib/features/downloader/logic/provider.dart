@@ -1,7 +1,5 @@
 import 'dart:async';
 import 'dart:developer';
-import 'dart:io';
-import 'dart:typed_data';
 import 'package:doris_downloader/core/error_handling/contexts/contexts/custom_error.dart';
 import 'package:doris_downloader/features/downloader/data/repository.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -11,22 +9,10 @@ final sharedProvider = StateProvider<String>((ref) {
   return '';
 });
 
-final indexProvider = StateProvider<int>((ref) {
-  return 0;
-});
-
 final controllerProvider = StateProvider<String>((ref) {
   return '';
 });
 
-final downloadedFilesProvider = FutureProvider<List<File>>((ref) async {
-  final DownloaderRepository repository = DownloaderRepository();
-  final downloadedEntities = await repository.getDownloadedVideos();
-  final files = downloadedEntities.whereType<File>().map((entity) {
-    return entity;
-  }).toList();
-  return files;
-});
 
 final downloadPercentageProvider = StateProvider<int>((ref) {
   return 0;
@@ -36,27 +22,7 @@ final modelProvider = StateProvider<String>((ref) {
   return '';
 });
 
-final unseenDownloadsProvider = StateProvider<bool>((ref) {
-  return false;
-});
 
-final thumbnailsProvider = FutureProvider<List<Uint8List>>((ref) async {
-  final repository = DownloaderRepository();
-  final thumbnails = await ref.watch(downloadedFilesProvider.future).then((
-    data,
-  ) async {
-    if (data.isEmpty) {
-      return <Uint8List>[];
-    }
-    final files = data.reversed.toList();
-    return await Future.wait(
-      files
-          .map((file) async => await repository.getVideoThumbnail(file.path))
-          .toList(),
-    );
-  });
-  return thumbnails;
-});
 
 final downloaderNotifierProvider =
     AsyncNotifierProvider<DownloaderNotifier, void>(DownloaderNotifier.new);
@@ -104,7 +70,5 @@ class DownloaderNotifier extends AsyncNotifier<void> {
     state = const AsyncValue.data(null);
     ref.read(downloadPercentageProvider.notifier).state = 0;
     _downloadModel = null;
-    ref.invalidate(downloadedFilesProvider);
-    ref.read(unseenDownloadsProvider.notifier).state = true;
   }
 }

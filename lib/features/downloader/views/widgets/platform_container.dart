@@ -1,4 +1,4 @@
-
+import 'package:doris_downloader/core/config/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:flutter_svg/svg.dart';
@@ -14,7 +14,7 @@ class PlatformContainer extends ConsumerWidget {
       height: size ?? 50,
       width: size ?? 50,
       decoration: BoxDecoration(
-        color: const Color.fromARGB(128, 0, 0, 0),
+        color: AppColors.secondary,
         borderRadius: BorderRadius.circular(15),
       ),
       child: Padding(

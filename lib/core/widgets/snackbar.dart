@@ -26,11 +26,11 @@ class FlushbarManager {
       messageText: Text(
         content,
         textAlign: TextAlign.center,
-        style: const TextStyle(color: AppColors.background),
+        style: const TextStyle(color: AppColors.text),
       ),
       margin: const EdgeInsets.all(7),
       borderRadius: BorderRadius.circular(25),
-      backgroundColor: AppColors.text,
+      backgroundColor: const Color(0xFFFFFFFF),
       icon: Icon(
         type == SnackType.success
             ? Icons.check_circle_outline_rounded

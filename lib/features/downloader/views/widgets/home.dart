@@ -107,14 +107,14 @@ class HomeWidget extends ConsumerWidget {
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
-                      Text(
-                        'A simple video downloader for my mom. \n Doris Boakye',
-                        style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w600,
-                        ),
-                        textAlign: TextAlign.center,
-                      ),
+                      // Text(
+                      //   'A simple video downloader for my mom. \n Doris Boakye',
+                      //   style: TextStyle(
+                      //     fontSize: 20,
+                      //     fontWeight: FontWeight.w600,
+                      //   ),
+                      //   textAlign: TextAlign.center,
+                      // ),
                       Column(
                         spacing: 24,
                         mainAxisAlignment: MainAxisAlignment.center,
